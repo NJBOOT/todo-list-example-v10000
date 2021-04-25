@@ -17,7 +17,8 @@ class TodoList extends Component {
         ...this.state.todos,
         {
           task: newItem.newTodo,
-          completed: newItem.completed,
+          completed: false,
+          editing: false,
           id: newItem.id,
         },
       ],

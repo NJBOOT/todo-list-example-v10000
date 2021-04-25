@@ -18,7 +18,7 @@ class NewTodoForm extends Component {
   };
 
   handleChange = e => {
-      {name, value} = e.target
+    const { name, value } = e.target;
     this.setState({ [name]: value });
   };
 
