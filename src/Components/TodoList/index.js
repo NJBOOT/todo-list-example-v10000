@@ -38,10 +38,8 @@ class TodoList extends Component {
         this.setState({
           todos: [...updated, { ...el, ...traits }],
         });
-        console.log(el);
       }
     }
-    console.log(stateArr);
   };
 
   editItem = id => {

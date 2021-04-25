@@ -5,23 +5,21 @@ import { v4 as uuidv4 } from "uuid";
 class NewTodoForm extends Component {
   state = {
     newTodo: "",
-    completed: false,
     id: uuidv4(),
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     this.props.handleAdd(this.state);
     this.setState({
       id: uuidv4(),
       newTodo: "",
-      completed: false,
     });
   };
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+      {name, value} = e.target
+    this.setState({ [name]: value });
   };
 
   render() {
