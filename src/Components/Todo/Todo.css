@@ -1,0 +1,8 @@
+.Todo {
+  display: flex;
+  list-style: inside;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid grey;
+}

@@ -1,0 +1,20 @@
+.TodoList {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 50%;
+  background-color: lightblue;
+  justify-content: center;
+  align-items: center;
+}
+
+.TodoList-container {
+  width: 50%;
+  flex: 0 0 100%;
+  margin: 10px;
+  border: 1px solid darkblue;
+}
+
+.TodoList-container > ul {
+  padding-inline-start: 0px;
+  list-style: none;
+}

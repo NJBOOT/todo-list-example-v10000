@@ -1,0 +1,6 @@
+.NewTodoForm {
+  width: 50%;
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: space-between;
+}
