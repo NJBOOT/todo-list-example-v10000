@@ -12,16 +12,14 @@ class TodoList extends Component {
   };
 
   handleAdd = newItem => {
+    const newTodo = {
+      task: newItem.newTodo,
+      completed: false,
+      editing: false,
+      id: newItem.id,
+    };
     this.setState({
-      todos: [
-        ...this.state.todos,
-        {
-          task: newItem.newTodo,
-          completed: false,
-          editing: false,
-          id: newItem.id,
-        },
-      ],
+      todos: [...this.state.todos, newTodo],
     });
   };
 
@@ -31,16 +29,28 @@ class TodoList extends Component {
     });
   };
 
+  //   updateTasksUsingId = (id, { ...traits }) => {
+  //     let stateArr = [...this.state.todos];
+  //     for (let el of stateArr) {
+  //       if (el.id === id) {
+  //         stateArr[stateArr.indexOf(el)] = { ...el, ...traits };
+  //         // let updated = stateArr.filter(el => id !== el.id);
+  //         this.setState({
+  //           todos: [...stateArr],
+  //         });
+  //       }
+  //     }
+  //   };
+
+  // better method to update
   updateTasksUsingId = (id, { ...traits }) => {
-    let stateArr = [...this.state.todos];
-    for (let el of stateArr) {
-      if (el.id === id) {
-        let updated = stateArr.filter(el => id !== el.id);
-        this.setState({
-          todos: [...updated, { ...el, ...traits }],
-        });
+    let updatedStateArr = [...this.state.todos].map(todo => {
+      if (todo.id === id) {
+        return { ...todo, ...traits };
       }
-    }
+      return todo;
+    });
+    this.setState({ todos: updatedStateArr });
   };
 
   editItem = id => {
@@ -64,6 +74,7 @@ class TodoList extends Component {
   render() {
     return (
       <div className="TodoList">
+        <h2>To Do List!</h2>
         <div className="TodoList-container">
           <ul>
             {this.state.todos.map(todo => (

@@ -1,8 +1,8 @@
 .Todo {
   display: flex;
-  list-style: inside;
+  list-style: none;
   justify-content: space-between;
-  margin: 5px;
-  padding: 2px;
-  border: 1px solid grey;
+  margin: 10px;
+  padding: 5px 10px;
+  border: 2px solid rgba(109, 131, 116, 0.29);
 }
